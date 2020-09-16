@@ -10,3 +10,18 @@
 // }
 
 // export default BookComponent
+
+
+
+import React from 'react'
+
+const BookComponent = ({book}) => {
+    return (
+        <div>
+            <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/>
+            <div className="title"></div>
+        </div>
+    )
+}
+
+export default BookComponent
