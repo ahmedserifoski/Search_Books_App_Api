@@ -1,0 +1,51 @@
+
+
+.book {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    "image title"
+    "image authors"
+    "image pageNumber"
+    /* "description description" */
+    /* "hr hr" */
+    ;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    justify-content: start;
+    background: #f1ebdc;
+}
+
+.image {
+    grid-area: image;
+    margin-right: 0.5em;
+}
+
+.title, .authors, .pageNumber {
+    align-self: start;
+    justify-self: start;
+} 
+
+.title {
+    grid-area: title;
+    margin-right: auto;
+}
+
+.authors {
+    grid-area: authors;
+    
+}
+
+.pageNumber {
+    grid-area: pageNumber;
+}
+/* 
+.description {
+    grid-area: description;
+} */
+/* 
+.hr {
+    margin-top: 1em;
+    grid-area: hr;
+} */

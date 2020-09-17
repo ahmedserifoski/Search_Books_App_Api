@@ -54,6 +54,10 @@
 
 import React, {useState} from 'react'
 import BookComponent from "./BookComponent"
+import "./SearchBooks.css"
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const SearchBooks = () => {
 
@@ -66,35 +70,31 @@ const SearchBooks = () => {
         const key = "AIzaSyCBqv8O6IeVjogiljjDy7r2Kr3XdTxun0Q"
         const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`
 
-        try{
-            const res = await fetch(url)
-            const data = await res.json()
-            
-            setBooks(data.items)
-            console.log(data.items)
-
-        }catch(err){
-            console.error(err)
-        }
+        const res = await fetch(url)
+        const data = await res.json()
+        setBooks(data.items)
+        console.log(data.items)
     }
 
     return (
         <div>
-            <h1>Alma</h1>
-            <form onSubmit={searchBooks}>
+            <form className="form" onSubmit={searchBooks}>
                 <input 
-                    type="text"
-                    name="input"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search Book"
-                /> 
-            </form>
-            <div>
+                className="input"
+                type="text"
+                name="input"
+                placeholder="Search Books"
+                value={query}
+                onChange={(event => setQuery(event.target.value))}
+            />
+            <button className="button" type="submit">Search</button>
+            </form>        
+            <div className="books">
                 {books.map(book => (
-                    <BookComponent book={book} key={book.id}/> 
+                    <BookComponent book={book} key={book.id} />
                 ))}
             </div>
+            
         </div>
     )
 }
