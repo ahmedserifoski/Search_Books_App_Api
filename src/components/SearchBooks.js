@@ -61,11 +61,15 @@ import "./SearchBooks.css"
 
 const SearchBooks = () => {
 
+    
+    
     const [query, setQuery] = useState("")
     const [books, setBooks] = useState([])
 
     const searchBooks = async (event) => {
         event.preventDefault()
+
+        document.querySelector(".question").setAttribute("style", "display: none")
 
         const key = "AIzaSyCBqv8O6IeVjogiljjDy7r2Kr3XdTxun0Q"
         const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`
@@ -78,6 +82,7 @@ const SearchBooks = () => {
 
     return (
         <div>
+            
             <form className="form" onSubmit={searchBooks}>
                 <input 
                 className="input"
@@ -89,6 +94,7 @@ const SearchBooks = () => {
             />
             <button className="button" type="submit">Search</button>
             </form>        
+            <h2 className="question">What would you like to read</h2>
             <div className="books">
                 {books.map(book => (
                     <BookComponent book={book} key={book.id} />

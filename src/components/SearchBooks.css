@@ -25,6 +25,11 @@
     color: whitesmoke;
 }
 
+.question {
+    margin: 1em;
+    text-align: center;
+}
+
 @media (min-width: 290px) {
     .input {
         width: 90%;
@@ -39,6 +44,10 @@
         grid-template-areas: 
         "books"
         ;
+    }
+
+    .input, .button {
+        font-size: 1.2rem;
     }
 }
 
