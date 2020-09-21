@@ -7,14 +7,12 @@
     "image title"
     "image authors"
     "image pageNumber"
-    /* "description description" */
-    /* "hr hr" */
     ;
     margin: 1em;
     padding: 1em;
     border-radius: 10px;
     justify-content: start;
-    background: #f1ebdc;
+    background: rgba(228, 224, 215, 0.5);
 }
 
 .image {
@@ -40,12 +38,3 @@
 .pageNumber {
     grid-area: pageNumber;
 }
-/* 
-.description {
-    grid-area: description;
-} */
-/* 
-.hr {
-    margin-top: 1em;
-    grid-area: hr;
-} */

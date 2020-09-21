@@ -1,12 +1,12 @@
 .form {
     
     margin-top: 0.7em;
-    background: #f1ebdc;
+    background: rgba(228, 224, 215, 0.5);
+
     padding: 0.5em;
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    /* box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75); */
 }
 
 .input, .button {
