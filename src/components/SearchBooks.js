@@ -32,10 +32,12 @@ const SearchBooks = () => {
         const key = "AIzaSyCBqv8O6IeVjogiljjDy7r2Kr3XdTxun0Q"
         const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`
 
-        const res = await fetch(url)
-        const data = await res.json()
-        setBooks(data.items)
-        // console.log(data.items)
+        
+            const res = await fetch(url)
+            const data = await res.json()
+            setBooks(data.items)
+            console.log(data.items)
+    
     }
 
     
