@@ -24,11 +24,11 @@
     background: rgb(29, 29, 29);
     color: whitesmoke;
 }
-
-.question {
-    margin: 1em;
-    text-align: center;
-}
+    /* 
+    .question {
+        margin: 1em;
+        text-align: center;
+    } */
 
 @media (min-width: 290px) {
     .input {
