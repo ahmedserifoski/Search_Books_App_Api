@@ -1,12 +1,24 @@
+
+.shouldIRender {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form {
-    
     margin-top: 0.7em;
     background: rgba(228, 224, 215, 0.5);
-
     padding: 0.5em;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.pageTitle {
+    font-size: 1.7rem;
+    align-self: center;
+    margin-right: auto;
+    display: none;
 }
 
 .input, .button {
@@ -33,7 +45,13 @@
 @media (min-width: 290px) {
     .input {
         width: 90%;
-        max-width: 500px;
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 430px) {
+    .pageTitle {
+        display: inline;
     }
 }
 

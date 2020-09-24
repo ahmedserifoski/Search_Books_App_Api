@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-areas: 
+    
     "image title"
     "image authors"
     "image pageNumber"
@@ -14,6 +15,7 @@
     justify-content: start;
     background: rgba(228, 224, 215, 0.5);
 }
+
 
 .image {
     grid-area: image;
