@@ -17,26 +17,26 @@ const SearchBooks = () => {
     }, [])
 
     const searchRandomBooks = async () => {
-        const key = "AIzaSyCBqv8O6IeVjogiljjDy7r2Kr3XdTxun0Q"
-        const url = `https://www.googleapis.com/books/v1/volumes?q=gameofthrones&key=${key}`
+    
+        const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
 
         const res = await fetch(url)
         const data = await res.json()
-        setBooks(data.items)
+        setBooks(data.results)
         // console.log(data.items)
     }
 
     const searchBooks = async (event) => {
         event.preventDefault()
 
-        const key = "AIzaSyCBqv8O6IeVjogiljjDy7r2Kr3XdTxun0Q"
-        const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`
+        
+        const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=${query}`
 
         
             const res = await fetch(url)
             const data = await res.json()
-            setBooks(data.items)
-            console.log(data.items)
+            setBooks(data.results)
+            // console.log(data.results)
     
     }
 
