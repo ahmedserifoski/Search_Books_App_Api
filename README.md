@@ -1,4 +1,4 @@
-# Search Books App Api
+# Ikea Clone
 
 **LIVE LINK:** https://ikea-clone.netlify.app/
 
