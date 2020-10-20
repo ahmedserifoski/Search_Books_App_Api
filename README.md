@@ -1,12 +1,10 @@
-# Ikea Clone
+# Search Books App
 
-**LIVE LINK:** https://ikea-clone.netlify.app/
+**LIVE LINK:** https://search-books-api.netlify.app/
 
 ## Features
 * Fully responsive (mobile first)
 * Fully functional on the front end
-* Add and delete from cart item
-* Fully functioning cart page
 
 
 ## Running the Project
