@@ -1,10 +1,12 @@
 # Search Books App Api
 
-**LIVE LINK:** https://search-books-api.netlify.app/
+**LIVE LINK:** https://ikea-clone.netlify.app/
 
 ## Features
 * Fully responsive (mobile first)
 * Fully functional on the front end
+* Add and delete from cart item
+* Fully functioning cart page
 
 
 ## Running the Project
