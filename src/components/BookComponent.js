@@ -5,13 +5,14 @@ import "./BookComponent.css"
 
 
 const BookComponent = ({book}) => {
+
     return (<div className="book">
-            {book.image_url ? <img className="image" src={book.image_url} alt=""/> : ""}
-            <h4 className="title">{book.title}</h4>
-            <small className="authors">by: <strong>{book.author.name}</strong></small>
-            <p className="pageNumber">Release date:  <strong>{book.original_publication_year}</strong></p>
-                {/* <p className="description">{book.searchInfo.textSnippet}</p>   */}
-            {/* <hr className="hr"></hr> */}
+            {book.volumeInfo.imageLinks ? <img className="image" src={book.volumeInfo.imageLinks.smallThumbnail} alt=""/> : ""}
+            <h4 className="title">{book.volumeInfo.title}</h4>
+            <h3 className="subtitle">{book.volumeInfo.subtitle}</h3>
+            <small className="authors">by: <strong>{book.volumeInfo.authors}</strong></small>
+            <p className="pageNumber">Page number:  <strong>{book.volumeInfo.pageCount}</strong></p>
+            {/* <button onClick={getDesc}>Search more</button> */}
         </div>)
 }
 

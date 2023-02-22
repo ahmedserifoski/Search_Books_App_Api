@@ -1,5 +1,3 @@
-
-
 import React, {useState, useEffect} from 'react'
 import BookComponent from "./BookComponent"
 import Spinner from "./Spinner"
@@ -13,18 +11,18 @@ const SearchBooks = () => {
     const [query, setQuery] = useState("")
     const [books, setBooks] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
     useEffect(() => {
         searchRandomBooks()
     }, [])
 
     const searchRandomBooks = async () => {
     
-        const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
+        //const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
+        const url = `https://www.googleapis.com/books/v1/volumes?q=the%20martian`
 
         const res = await fetch(url)
         const data = await res.json()
-        setBooks(data.results)
+        setBooks(data.items)
         setIsLoading(false)
         // console.log(data.items)
     }
@@ -38,9 +36,9 @@ const SearchBooks = () => {
 
         const res = await fetch(url)
         const data = await res.json()
-        setBooks(data.results)
+        setBooks(data.totalItems)
         setIsLoading(false)
-        // console.log(data.results)
+        console.log(data.results)
         booksDiv.style.display = "grid"
     }
 
@@ -68,7 +66,7 @@ const SearchBooks = () => {
                     ))}
                     
                 </div> }
-            </div>
+                    </div>
             
         </div>
     )

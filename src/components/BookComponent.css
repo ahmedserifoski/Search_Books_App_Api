@@ -6,6 +6,7 @@
     grid-template-areas: 
     
     "image title"
+    "image subtitle"
     "image authors"
     "image pageNumber"
     ;
@@ -20,9 +21,10 @@
 .image {
     grid-area: image;
     margin-right: 0.5em;
+    width: 6em;
 }
 
-.title, .authors, .pageNumber {
+.title, .subtitle, .authors, .pageNumber {
     align-self: start;
     justify-self: start;
 } 
@@ -31,6 +33,12 @@
     grid-area: title;
     margin-right: auto;
 }
+
+.subtitle {
+    grid-area: subtitle;
+
+}
+
 
 .authors {
     grid-area: authors;
