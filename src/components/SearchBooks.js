@@ -17,12 +17,12 @@ const SearchBooks = () => {
 
     const searchRandomBooks = async () => {
     
-        //const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
-        const url = `https://www.googleapis.com/books/v1/volumes?q=the%20martian`
+        const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
+        //const url = `https://www.googleapis.com/books/v1/volumes?q=the%20martian`
 
         const res = await fetch(url)
         const data = await res.json()
-        setBooks(data.items)
+        setBooks(data.results)
         setIsLoading(false)
         // console.log(data.items)
     }
@@ -36,7 +36,7 @@ const SearchBooks = () => {
 
         const res = await fetch(url)
         const data = await res.json()
-        setBooks(data.totalItems)
+        setBooks(data.results)
         setIsLoading(false)
         console.log(data.results)
         booksDiv.style.display = "grid"

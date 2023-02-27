@@ -2,7 +2,7 @@
 
 .book {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(auto);
     grid-template-areas: 
     
     "image title"
