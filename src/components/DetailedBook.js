@@ -1,9 +1,8 @@
 import React from 'react'
 
-const DetailedBook = () => {
+const DetailedBook = ({aBook}) => {
   return (
-    <div>DetailedBook</div>
-  )
+aBook.title  )
 }
 
 export default DetailedBook
