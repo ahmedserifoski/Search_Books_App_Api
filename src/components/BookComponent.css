@@ -2,19 +2,20 @@
 
 .book {
     display: grid;
-    grid-template-columns: repeat(auto);
+    grid-template-columns: repeat(2, auto);
     grid-template-areas: 
     
     "image title"
-    "image subtitle"
     "image authors"
     "image pageNumber"
+    "image button"
     ;
     margin: 1em;
     padding: 1em;
     border-radius: 10px;
     justify-content: start;
     background: rgba(228, 224, 215, 0.5);
+    max-width: 300px;
 }
 
 
@@ -24,19 +25,19 @@
     width: 6em;
 }
 
-.title, .subtitle, .authors, .pageNumber {
+.title, .authors, .pageNumbe {
     align-self: start;
     justify-self: start;
 } 
 
+button {
+    align-self: start;
+    justify-self: start;
+}
+
 .title {
     grid-area: title;
     margin-right: auto;
-}
-
-.subtitle {
-    grid-area: subtitle;
-
 }
 
 
@@ -47,4 +48,8 @@
 
 .pageNumber {
     grid-area: pageNumber;
+}
+
+button {
+    grid-area: button;
 }
