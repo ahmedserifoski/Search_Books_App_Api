@@ -1,76 +1,58 @@
-import React, {useState, useEffect} from 'react'
-import BookComponent from "./BookComponent"
-import Spinner from "./Spinner"
-import "./SearchBooks.css"
+// import React, {useState, useEffect} from 'react'
+
+
+// import "./SearchBooks.css"
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import DetailedBook from './DetailedBook';
+// import DefaultBooks from './DefaultBooks';
 
 
 
 
-const SearchBooks = () => {
+// const SearchBooks = () => {
 
-    const [query, setQuery] = useState("")
-    const [books, setBooks] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        searchRandomBooks()
-    }, [])
+//     const [query, setQuery] = useState("")
+//     {/*
+//     const searchBooks = async (event) => {
+//         event.preventDefault()
+//         const booksDiv = document.querySelector(".book")
+//         booksDiv.style.display = "none"
+//         setIsLoading(true)
+//         const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=${query}`
 
-    const searchRandomBooks = async () => {
-    
-        //const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=harry%20potter`
-        const url = `https://www.googleapis.com/books/v1/volumes?q=the%20martian`
+//         const res = await fetch(url)
+//         const data = await res.json()
+//         setBooks(data.results)
+//         setIsLoading(false)
+//         console.log(data.results)
+//         booksDiv.style.display = "grid"
+//     }
 
-        const res = await fetch(url)
-        const data = await res.json()
-        setBooks(data.items)
-        setIsLoading(false)
-        // console.log(data.items)
-    }
+// */}
 
-    const searchBooks = async (event) => {
-        event.preventDefault()
-        const booksDiv = document.querySelector(".book")
-        booksDiv.style.display = "none"
-        setIsLoading(true)
-        const url = `https://v1.nocodeapi.com/ahmedserifoski/gr/vwFWjPzlSWrRzaRC/search?q=${query}`
+//     return (
+//         <div>
+//            {/* 
+//             <form className="form" onSubmit={searchBooks}>
+//                 <p className="pageTitle">good<strong>read</strong>clone</p>
+//                 <input 
+//                 className="input"
+//                 type="text"
+//                 name="input"
+//                 placeholder="Search Books"
+//                 value={query}
+//                 onChange={(event => setQuery(event.target.value))}
+//             />
+//             <button className="button" type="submit">Search</button>
+//             </form>
+//     */}
 
-        const res = await fetch(url)
-        const data = await res.json()
-        setBooks(data.results)
-        setIsLoading(false)
-        console.log(data.results)
-        booksDiv.style.display = "grid"
-    }
-
-    
-
-    return (
-        <div>
             
-            <form className="form" onSubmit={searchBooks}>
-                <p className="pageTitle">good<strong>read</strong>clone</p>
-                <input 
-                className="input"
-                type="text"
-                name="input"
-                placeholder="Search Books"
-                value={query}
-                onChange={(event => setQuery(event.target.value))}
-            />
-            <button className="button" type="submit">Search</button>
-            </form>
-            <div className="shouldIRender">
-                {isLoading ? <Spinner /> : <div className="books">
-                    {books.map(book => (
-                        <BookComponent book={book} isLoading={isLoading} key={book.id} />
-                    ))}
-                    
-                </div> }
-                    </div>
-            
-        </div>
-    )
-}
 
-export default SearchBooks
+            
+//         </div>
+//     )
+// }
+
+// export default SearchBooks
 
