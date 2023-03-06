@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DetailedBook from "../pages/DetailedBook";
 
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,10 +31,14 @@ const BookComponent = ({ book }) => {
                 by: <strong>{book.volumeInfo.authors}</strong>
             </small>
             <p className="pageNumber">
-                Page number: <strong>{book.volumepageCount}</strong>
+                Page number: {book.volumeInfo.pageCount}
             </p>
             {/* Link to the id of a singe book, this is a dynamic tag */}
-            <Link to={book.id}> Show More</Link>
+            <Button variant="light">
+
+                <Link className="text-black text-decoration-none" to={book.id}> Show More</Link>
+
+            </Button>
         </div>
     );
 };
