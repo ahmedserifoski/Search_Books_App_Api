@@ -5,7 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom'
 import BookComponent from "../components/BookComponent"
 
 const Home = () => {
-
+  /* useLoaderData().items - because the books data is actually inside the items array that comes from the API call */
   const books = useLoaderData().items
 
   return (
@@ -22,7 +22,7 @@ const Home = () => {
 
 export default Home;
 
-//data loader
+//data loader, API Call
 export const loadRandomBooks = async () => {
   const url = `https://www.googleapis.com/books/v1/volumes?q=the%20martian`;
 

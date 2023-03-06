@@ -32,8 +32,8 @@ const BookComponent = ({ book }) => {
             <p className="pageNumber">
                 Page number: <strong>{book.volumepageCount}</strong>
             </p>
-
-            <Link to={`${book.id}`}> Show More</Link>
+            {/* Link to the id of a singe book, this is a dynamic tag */}
+            <Link to={book.id}> Show More</Link>
         </div>
     );
 };

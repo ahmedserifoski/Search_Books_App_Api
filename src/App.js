@@ -10,7 +10,7 @@ import "./App.css";
 
 import Home, { loadRandomBooks } from "./pages/Home";
 
-import DetailedBook from "./pages/DetailedBook";
+import DetailedBook, { detailedBookLoader } from "./pages/DetailedBook";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,7 +20,11 @@ const router = createBrowserRouter(
                 element={<Home />}
                 loader={loadRandomBooks}
             />
-            <Route path=":id" element={<DetailedBook />} />
+            <Route 
+                path=":id" 
+                element={<DetailedBook />} 
+                loader={detailedBookLoader}
+            />
         </Route>
     )
 );

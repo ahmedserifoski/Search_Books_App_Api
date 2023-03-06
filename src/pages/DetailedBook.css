@@ -1,0 +1,10 @@
+.card {
+display: flex;
+flex-wrap: wrap;
+}
+
+
+
+.card-body {
+    max-width: 20em;
+}
