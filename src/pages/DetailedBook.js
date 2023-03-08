@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 
 import { useLoaderData } from "react-router-dom";
 
-// import "./DetailedBook.css";
+import "./DetailedBook.css";
 
 const DetailedBook = () => {
     const detailedBookData = useLoaderData().items[0].volumeInfo;
@@ -20,26 +20,28 @@ const DetailedBook = () => {
     // console.log(thisService.title)
 
     return (
-        <Container>
+        <Container className="container-body" fluid>
             <Row>
                 <Col
-                    className="d-flex align-items-center justify-content-center"
+                    className="d-flex flex-column align-items-center justify-content-center text-center bg-primary"
                     xs={4}
                 >
                     <Card.Img
                         style={{ maxWidth: "15em" }}
                         src={detailedBookData.imageLinks.smallThumbnail}
                     />
+                    <Button className="mt-4 align-self-center" variant="outline-secondary">Lets pretend this is a rating link</Button>
+                    <Button className="mt-3 align-self-center" variant="outline-secondary">This is not a node project</Button>
                 </Col>
                 <Col>
-                    <Card.Title className="fs-1  justify-content-xs-center ">
+                    <Card.Title className="book-title fs-1  justify-content-xs-center ">
                         {detailedBookData.title}
                     </Card.Title>
-                    <Card.Subtitle className="justify-content-md-center">
+                    <Card.Subtitle className="book-author mt-3 justify-content-md-center">
                         By: {detailedBookData.authors}
                     </Card.Subtitle>
-                    <Card.Text>
-                        Rating: {detailedBookData.averageRating}
+                    <Card.Text className="mt-3">
+                        Rating: {detailedBookData.averageRating} {detailedBookData.ratingsCount} ratings
                     </Card.Text>
                     <Card.Text>{detailedBookData.description}</Card.Text>
                     <Card.Text>
