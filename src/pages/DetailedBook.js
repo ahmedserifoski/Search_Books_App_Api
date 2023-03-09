@@ -23,7 +23,7 @@ const DetailedBook = () => {
         <Container className="container-body" fluid>
             <Row>
                 <Col
-                    className="d-flex flex-column align-items-center justify-content-center text-center bg-primary"
+                    className="d-flex flex-column align-items-center justify-content-center text-center"
                     xs={4}
                 >
                     <Card.Img
@@ -31,21 +31,25 @@ const DetailedBook = () => {
                         src={detailedBookData.imageLinks.smallThumbnail}
                     />
                     <Button className="mt-4 align-self-center" variant="outline-secondary">Lets pretend this is a rating link</Button>
-                    <Button className="mt-3 align-self-center" variant="outline-secondary">This is not a node project</Button>
+                    <Button className="mt-3 align-self-center" variant="outline-secondary">Since this is not a node project</Button>
                 </Col>
                 <Col>
                     <Card.Title className="book-title fs-1  justify-content-xs-center ">
                         {detailedBookData.title}
                     </Card.Title>
-                    <Card.Subtitle className="book-author mt-3 justify-content-md-center">
+                    <Card.Subtitle className="book-author fs-4 mt-3 justify-content-md-center">
                         By: {detailedBookData.authors}
                     </Card.Subtitle>
                     <Card.Text className="mt-3">
-                        Rating: {detailedBookData.averageRating} {detailedBookData.ratingsCount} ratings
+                        <span className="fs-3 "> Rating: {detailedBookData.averageRating}</span> <small className="align-top"> {detailedBookData.ratingsCount} ratings</small>
                     </Card.Text>
+                    <Card.Text>Publisher: <span className="bg-warning p-1 rounded">{detailedBookData.publisher}</span>, Published Date: <span className="bg-warning p-1 rounded">{detailedBookData.publishedDate}</span></Card.Text>
                     <Card.Text>{detailedBookData.description}</Card.Text>
                     <Card.Text>
-                        Publisher: {detailedBookData.publisher}
+                      <small className="text-secondary">Genres: <span className="p-1 border-bottom border-3 border-warning ">{detailedBookData.categories}</span></small>
+                    </Card.Text>
+                    <Card.Text>
+                      <small className="text-secondary">{detailedBookData.pageCount} pages</small>
                     </Card.Text>
                 </Col>
             </Row>

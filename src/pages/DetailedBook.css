@@ -15,7 +15,7 @@ flex-wrap: wrap;
 }
 
 .book-title, .book-author {
-    /* font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 font-family: 'Source Serif Pro', serif;
-        font-weight: 400; */
+        font-weight: 400;
 }
