@@ -1,23 +1,36 @@
 import React from "react";
+
+// bootstrap
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import Container from "react-bootstrap/Container";
 
+//dom functions
 import { useLoaderData } from "react-router-dom";
 
+//css
 import "./DetailedBook.css";
+
+//star rating
+import { FaStar, FaRegStar } from 'react-icons/fa';
+
+
 
 const DetailedBook = () => {
     const detailedBookData = useLoaderData().items[0].volumeInfo;
 
-    console.log(detailedBookData);
+    const STAR_COUNT = detailedBookData.averageRating;
+const Rating = () => {
+  const stars = Array(STAR_COUNT).fill(<FaStar/>);
+  // if (value % 1 != 0) // if value is a decimal, add a half star
+  //   stars[Math.floor(value)] = <HalfStar />;
+
+  return stars;
+};
 
     // const thisService = books.find(service => service.id === detailedId)
-
-    // console.log(thisService.title)
 
     return (
         <Container className="container-body" fluid>
@@ -41,7 +54,11 @@ const DetailedBook = () => {
                         By: {detailedBookData.authors}
                     </Card.Subtitle>
                     <Card.Text className="mt-3">
-                        <span className="fs-3 "> Rating: {detailedBookData.averageRating}</span> <small className="align-top"> {detailedBookData.ratingsCount} ratings</small>
+                        <span className="fs-3 ">
+                        
+                          {Rating}
+                        </span>
+                        <small className="align-top"> {detailedBookData.ratingsCount} ratings</small>
                     </Card.Text>
                     <Card.Text>Publisher: <span className="bg-warning p-1 rounded">{detailedBookData.publisher}</span>, Published Date: <span className="bg-warning p-1 rounded">{detailedBookData.publishedDate}</span></Card.Text>
                     <Card.Text>{detailedBookData.description}</Card.Text>
