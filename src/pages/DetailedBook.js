@@ -21,14 +21,22 @@ import { FaStar, FaRegStar } from 'react-icons/fa';
 const DetailedBook = () => {
     const detailedBookData = useLoaderData().items[0].volumeInfo;
 
-    const STAR_COUNT = detailedBookData.averageRating;
-const Rating = () => {
-  const stars = Array(STAR_COUNT).fill(<FaStar/>);
-  // if (value % 1 != 0) // if value is a decimal, add a half star
-  //   stars[Math.floor(value)] = <HalfStar />;
+//     const STAR_COUNT = detailedBookData.averageRating;
+// const Rating = () => {
+//   const stars = Array(STAR_COUNT).fill(<FaStar/>);
+//   // if (value % 1 != 0) // if value is a decimal, add a half star
+//   //   stars[Math.floor(value)] = <HalfStar />;
 
-  return stars;
-};
+//   return stars;
+// };
+
+const stars = (n) => {
+  let style = [];
+  for(let i = 0; i < n; i++) {
+    style += "⭐️";
+  }
+  return style
+}
 
     // const thisService = books.find(service => service.id === detailedId)
 
@@ -56,8 +64,8 @@ const Rating = () => {
                     <Card.Text className="mt-3">
                         <span className="fs-3 ">
                         
-                          {Rating}
-                        </span>
+                          Rating: {stars(detailedBookData.averageRating)}
+                        </span> 
                         <small className="align-top"> {detailedBookData.ratingsCount} ratings</small>
                     </Card.Text>
                     <Card.Text>Publisher: <span className="bg-warning p-1 rounded">{detailedBookData.publisher}</span>, Published Date: <span className="bg-warning p-1 rounded">{detailedBookData.publishedDate}</span></Card.Text>
