@@ -19,16 +19,9 @@ import { FaStar, FaRegStar } from 'react-icons/fa';
 
 
 const DetailedBook = () => {
-    const detailedBookData = useLoaderData().items[0].volumeInfo;
-
-//     const STAR_COUNT = detailedBookData.averageRating;
-// const Rating = () => {
-//   const stars = Array(STAR_COUNT).fill(<FaStar/>);
-//   // if (value % 1 != 0) // if value is a decimal, add a half star
-//   //   stars[Math.floor(value)] = <HalfStar />;
-
-//   return stars;
-// };
+    const tryingToFetchData = useLoaderData().items[0].volumeInfo
+    const detailedBookData = tryingToFetchData;
+    console.log(useLoaderData().items[0].volumeInfo)
 
 const stars = (n) => {
   let style = [];
@@ -41,6 +34,9 @@ const stars = (n) => {
     // const thisService = books.find(service => service.id === detailedId)
 
     return (
+      <>
+        {tryingToFetchData == undefined ? 
+        
         <Container className="container-body" fluid>
             <Row>
                 <Col
@@ -78,7 +74,9 @@ const stars = (n) => {
                     </Card.Text>
                 </Col>
             </Row>
-        </Container>
+        </Container> :
+        "sorry"}
+        </>
     );
 };
 
